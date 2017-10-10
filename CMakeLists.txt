@@ -2,7 +2,7 @@
 include(ExternalProject)
 
 #beurocracy
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.9)
 
 #project
 project(ShittyTest)
@@ -17,7 +17,7 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/install/lib)
 file(GLOB SOURCES "src/*.cpp")
 
 #exe
-add_executable(ShittyGL ${SOURCES})
+add_executable(ShittyLife ${SOURCES})
 
 #meme
 set(install_dir ${CMAKE_CURRENT_BINARY_DIR}/install)
@@ -32,8 +32,10 @@ ExternalProject_Add(glew
   CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
 )
 
+add_dependencies(ShittyLife glew)
+
 if(UNIX)
-set(GLEW_LIB glew32d.a)
+set(GLEW_LIB libGLEW.a)
 else()
 set(GLEW_LIB glew32d.lib)
 endif()
@@ -45,13 +47,13 @@ ExternalProject_Add(glfw-external
   INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/install
   CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
 )
+
+add_dependencies(ShittyLife glfw-external)
+
 if(UNIX)
-  set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
-  set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-  set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-  add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/glfw/src/glfw)
-  
-  set(GLFW_LIB glfw)
+  find_package(PkgConfig REQUIRED)
+  pkg_search_module(GLFW REQUIRED glfw3)
+  set(GLFW_LIB ${GLFW_STATIC_LIBRARIES})
 else()
   set(GLFW_LIB ${install_dir}/lib/glfw3.lib)
 endif()
@@ -59,4 +61,4 @@ endif()
 #opengl
 find_package(OpenGL REQUIRED)
 
-target_link_libraries(ShittyGL  ${GLEW_LIB} ${GLFW_LIB} ${OPENGL_gl_LIBRARY})
+target_link_libraries(ShittyLife  ${GLEW_LIB} ${GLFW_LIB} ${OPENGL_gl_LIBRARY})
