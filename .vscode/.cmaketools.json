@@ -1,0 +1,469 @@
+{
+  "variant": {
+    "label": "Debug",
+    "keywordSettings": {
+      "buildType": "debug"
+    },
+    "description": "Emit debug information without performing optimizations"
+  },
+  "activeEnvironments": [],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Debug",
+        "projects": [
+          {
+            "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+            "name": "ShittyTest",
+            "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+            "targets": [
+              {
+                "artifacts": [
+                  "C:/Users/bjorn/programming/ShittyGL/build/Debug/ShittyGL.exe",
+                  "C:/Users/bjorn/programming/ShittyGL/build/Debug/ShittyGL.lib",
+                  "C:/Users/bjorn/programming/ShittyGL/build/Debug/ShittyGL.pdb"
+                ],
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1  ",
+                    "includePath": [
+                      {
+                        "path": "C:/Users/bjorn/programming/ShittyGL/include"
+                      },
+                      {
+                        "path": "C:/Users/bjorn/programming/ShittyGL/build/install/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "src/main.cpp",
+                      "src/test.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ShittyGL.exe",
+                "linkFlags": "/machine:X86 /debug /INCREMENTAL /subsystem:console",
+                "linkLanguageFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+                "linkLibraries": "opengl32.lib install\\lib\\glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+                "linkerLanguage": "CXX",
+                "name": "ShittyGL",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/glfw",
+                      "build/CMakeFiles/73977ff04f238ee24a2904a0c756aff3/glfw.rule",
+                      "build/CMakeFiles/aceaca95455ddcce200ec1ff3bcb0be3/glfw-complete.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-install.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-mkdir.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-download.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-update.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-patch.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-configure.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-build.rule"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw",
+                "name": "glfw",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/73977ff04f238ee24a2904a0c756aff3/generate.stamp.rule"
+                    ]
+                  }
+                ],
+                "fullName": "ZERO_CHECK",
+                "name": "ZERO_CHECK",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Release",
+        "projects": [
+          {
+            "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+            "name": "ShittyTest",
+            "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+            "targets": [
+              {
+                "artifacts": [
+                  "C:/Users/bjorn/programming/ShittyGL/build/Release/ShittyGL.exe",
+                  "C:/Users/bjorn/programming/ShittyGL/build/Release/ShittyGL.lib",
+                  "C:/Users/bjorn/programming/ShittyGL/build/Release/ShittyGL.pdb"
+                ],
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG  ",
+                    "includePath": [
+                      {
+                        "path": "C:/Users/bjorn/programming/ShittyGL/include"
+                      },
+                      {
+                        "path": "C:/Users/bjorn/programming/ShittyGL/build/install/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "src/main.cpp",
+                      "src/test.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ShittyGL.exe",
+                "linkFlags": "/machine:X86 /INCREMENTAL:NO /subsystem:console",
+                "linkLanguageFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG",
+                "linkLibraries": "opengl32.lib install\\lib\\glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+                "linkerLanguage": "CXX",
+                "name": "ShittyGL",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/glfw",
+                      "build/CMakeFiles/73977ff04f238ee24a2904a0c756aff3/glfw.rule",
+                      "build/CMakeFiles/aceaca95455ddcce200ec1ff3bcb0be3/glfw-complete.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-install.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-mkdir.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-download.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-update.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-patch.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-configure.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-build.rule"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw",
+                "name": "glfw",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/73977ff04f238ee24a2904a0c756aff3/generate.stamp.rule"
+                    ]
+                  }
+                ],
+                "fullName": "ZERO_CHECK",
+                "name": "ZERO_CHECK",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "MinSizeRel",
+        "projects": [
+          {
+            "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+            "name": "ShittyTest",
+            "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+            "targets": [
+              {
+                "artifacts": [
+                  "C:/Users/bjorn/programming/ShittyGL/build/MinSizeRel/ShittyGL.exe",
+                  "C:/Users/bjorn/programming/ShittyGL/build/MinSizeRel/ShittyGL.lib",
+                  "C:/Users/bjorn/programming/ShittyGL/build/MinSizeRel/ShittyGL.pdb"
+                ],
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG  ",
+                    "includePath": [
+                      {
+                        "path": "C:/Users/bjorn/programming/ShittyGL/include"
+                      },
+                      {
+                        "path": "C:/Users/bjorn/programming/ShittyGL/build/install/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "src/main.cpp",
+                      "src/test.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ShittyGL.exe",
+                "linkFlags": "/machine:X86 /INCREMENTAL:NO /subsystem:console",
+                "linkLanguageFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
+                "linkLibraries": "opengl32.lib install\\lib\\glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+                "linkerLanguage": "CXX",
+                "name": "ShittyGL",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/glfw",
+                      "build/CMakeFiles/73977ff04f238ee24a2904a0c756aff3/glfw.rule",
+                      "build/CMakeFiles/aceaca95455ddcce200ec1ff3bcb0be3/glfw-complete.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-install.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-mkdir.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-download.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-update.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-patch.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-configure.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-build.rule"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw",
+                "name": "glfw",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/73977ff04f238ee24a2904a0c756aff3/generate.stamp.rule"
+                    ]
+                  }
+                ],
+                "fullName": "ZERO_CHECK",
+                "name": "ZERO_CHECK",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "RelWithDebInfo",
+        "projects": [
+          {
+            "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+            "name": "ShittyTest",
+            "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+            "targets": [
+              {
+                "artifacts": [
+                  "C:/Users/bjorn/programming/ShittyGL/build/RelWithDebInfo/ShittyGL.exe",
+                  "C:/Users/bjorn/programming/ShittyGL/build/RelWithDebInfo/ShittyGL.lib",
+                  "C:/Users/bjorn/programming/ShittyGL/build/RelWithDebInfo/ShittyGL.pdb"
+                ],
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG  ",
+                    "includePath": [
+                      {
+                        "path": "C:/Users/bjorn/programming/ShittyGL/include"
+                      },
+                      {
+                        "path": "C:/Users/bjorn/programming/ShittyGL/build/install/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "src/main.cpp",
+                      "src/test.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ShittyGL.exe",
+                "linkFlags": "/machine:X86 /debug /INCREMENTAL /subsystem:console",
+                "linkLanguageFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG",
+                "linkLibraries": "opengl32.lib install\\lib\\glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+                "linkerLanguage": "CXX",
+                "name": "ShittyGL",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/glfw",
+                      "build/CMakeFiles/73977ff04f238ee24a2904a0c756aff3/glfw.rule",
+                      "build/CMakeFiles/aceaca95455ddcce200ec1ff3bcb0be3/glfw-complete.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-install.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-mkdir.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-download.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-update.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-patch.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-configure.rule",
+                      "build/CMakeFiles/47c67a9e0f93c48645b2e11e0de33d88/glfw-build.rule"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw",
+                "name": "glfw",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "C:/Users/bjorn/programming/ShittyGL/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/73977ff04f238ee24a2904a0c756aff3/generate.stamp.rule"
+                    ]
+                  }
+                ],
+                "fullName": "ZERO_CHECK",
+                "name": "ZERO_CHECK",
+                "sourceDirectory": "C:/Users/bjorn/programming/ShittyGL",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.458764296569544",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
+}
