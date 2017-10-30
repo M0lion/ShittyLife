@@ -2,9 +2,7 @@
     "configurations": [
         {
             "name": "null",
-            "includePath": [
-                "${workspaceRoot}/build/install/include"
-            ],
+            "includePath": [],
             "defines": [],
             "browse": {
                 "path": [
@@ -13,7 +11,7 @@
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
             },
-            "intelliSenseMode": "msvc-x64"
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 3

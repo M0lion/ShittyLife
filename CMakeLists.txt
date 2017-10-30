@@ -36,25 +36,28 @@ add_dependencies(ShittyLife glew)
 
 if(UNIX)
 set(GLEW_LIB libGLEW.a)
-else()
+else()  
 set(GLEW_LIB glew32d.lib)
 endif()
 
 #glfw
-ExternalProject_Add(glfw-external
-  URL https://github.com/glfw/glfw/releases/download/3.2.1/glfw-3.2.1.zip
-  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/glfw
-  INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/install
-  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
-)
-
-add_dependencies(ShittyLife glfw-external)
 
 if(UNIX)
-  find_package(PkgConfig REQUIRED)
-  pkg_search_module(GLFW REQUIRED glfw3)
-  set(GLFW_LIB ${GLFW_STATIC_LIBRARIES})
+  execute_process(COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/fuckGLFW.sh")
+
+  add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/glfw)
+  include_directories(${CMAKE_CURRENT_BINARY_DIR}/glfw/include)
+
+  set(GLFW_LIB glfw ${GLFW_LIBRARIES})
 else()
+  ExternalProject_Add(glfw-external
+    URL https://github.com/glfw/glfw/releases/download/3.2.1/glfw-3.2.1.zip
+    PREFIX ${CMAKE_CURRENT_BINARY_DIR}/glfw
+    INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/install
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+  )
+
+  add_dependencies(ShittyLife glfw-external)
   set(GLFW_LIB ${install_dir}/lib/glfw3.lib)
 endif()
 
