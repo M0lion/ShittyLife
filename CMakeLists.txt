@@ -64,4 +64,15 @@ endif()
 #opengl
 find_package(OpenGL REQUIRED)
 
+#gml 
+ExternalProject_Add(glm
+  URL https://github.com/g-truc/glm/releases/download/0.9.8.5/glm-0.9.8.5.zip
+  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/glm
+  CONFIGURE_COMMAND ""
+  BUILD_COMMAND ""
+  INSTALL_COMMAND ${CMAKE_COMMAND} -E copy_directory
+                  <SOURCE_DIR>/glm ${CMAKE_BINARY_DIR}/install/include/glm
+)
+add_dependencies(ShittyLife glm)
+
 target_link_libraries(ShittyLife  ${GLEW_LIB} ${GLFW_LIB} ${OPENGL_gl_LIBRARY})
