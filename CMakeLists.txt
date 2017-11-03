@@ -1,3 +1,6 @@
+#c++11
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
 #includes
 include(ExternalProject)
 
@@ -23,7 +26,6 @@ add_executable(ShittyLife ${SOURCES})
 set(install_dir ${CMAKE_CURRENT_BINARY_DIR}/install)
 
 #glew
-
 ExternalProject_Add(glew
   URL https://sourceforge.net/projects/glew/files/glew/2.1.0/glew-2.1.0.zip/download
   PREFIX ${CMAKE_CURRENT_BINARY_DIR}/glew
