@@ -3,8 +3,11 @@
 
 #include "Globals.h"
 #include "ShaderProgram.h"
+#include "MeshData.h"
 
 #include"Sleep.h"
+
+#include <stdio.h>
 
 int main(int argc, char* args[])
 {
@@ -14,6 +17,7 @@ int main(int argc, char* args[])
         return -1;
 
     window = glfwCreateWindow(640,480, "Hello World", NULL, NULL);
+
     if(!window)
     {
         glfwTerminate();
@@ -53,9 +57,14 @@ int main(int argc, char* args[])
 
     void main()
     {
-        float n = sqrt((pos.x*pos.x)+(pos.y*pos.y))*10;
+        vec3 Pos = pos;
 
-        n += t;
+        Pos.x += sin(t);
+        Pos.y += cos(t);
+
+        float n = sqrt((Pos.x*Pos.x)+(Pos.y*pos.y))*10;
+        
+        n += 10 * sin(t);
 
         outColor = vec4(tan(n),sin(n),cos(n),1);
     }
@@ -96,7 +105,7 @@ int main(int argc, char* args[])
         glUniform1f(t_loc, t);
         glDrawArrays(GL_TRIANGLES, 0, 6);
 
-        t += 0.3f;
+        t += 0.05f;
 
         sleep(1000/60.0f);
 
@@ -106,4 +115,5 @@ int main(int argc, char* args[])
 
     glfwTerminate();
     return 0;
+
 }
