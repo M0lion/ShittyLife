@@ -1,3 +1,4 @@
+#define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
@@ -107,7 +108,7 @@ int main(int argc, char* args[])
 
         t += 0.05f;
 
-        sleep(1000/60.0f);
+        sleep((int)(1000/60.0f));
 
         glfwSwapBuffers(window);
         glfwPollEvents();

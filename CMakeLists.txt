@@ -8,7 +8,7 @@ include(ExternalProject)
 cmake_minimum_required (VERSION 3.9)
 
 #project
-project(ShittyTest)
+project(ShittyLife)
 
 #includes
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/install/include)
@@ -39,7 +39,7 @@ add_dependencies(ShittyLife glew)
 if(UNIX)
 set(GLEW_LIB libGLEW.a)
 else()  
-set(GLEW_LIB glew32d.lib)
+set(GLEW_LIB libglew32d.lib)
 endif()
 
 #glfw
@@ -77,4 +77,6 @@ ExternalProject_Add(glm
 )
 add_dependencies(ShittyLife glm)
 
-target_link_libraries(ShittyLife  ${GLEW_LIB} ${GLFW_LIB} ${OPENGL_gl_LIBRARY})
+set(LIBS ${GLEW_LIB} ${GLFW_LIB} ${OPENGL_gl_LIBRARY})
+message(${LIBS})
+target_link_libraries(ShittyLife  ${LIBS})
