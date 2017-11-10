@@ -31,7 +31,12 @@
                 "/usr/include",
                 "/usr/local/include",
                 "${workspaceRoot}",
-                "${workspaceRoot}/build/install/include"
+                "${workspaceRoot}/build/install/include",
+                "${workspaceRoot}/build/glfw/include",
+                "/usr/include/c++/5",
+                "/usr/include/x86_64-linux-gnu/c++/5",
+                "/usr/include/linux",
+                "/usr/include/x86_64-linux-gnu"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",

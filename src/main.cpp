@@ -4,9 +4,9 @@
 
 #include "Globals.h"
 #include "ShaderProgram.h"
-#include "MeshData.h"
+#include "ColoredVertex.h"
 
-#include"Sleep.h"
+#include "Sleep.h"
 
 #include <stdio.h>
 
@@ -74,16 +74,30 @@ int main(int argc, char* args[])
     shader->addShader(GL_VERTEX_SHADER, vertexShader);
     shader->addShader(GL_FRAGMENT_SHADER, fragmentShader);
     shader->link();
-
-    float vertices[] = {
-        -100, -100, 0.0,
-         100,  100, 0.0,
-         100, -100, 0.0,
-        -100, -100, 0.0,
-        -100,  100, 0.0,
-         100,  100, 0.0,
-    }; 
     
+    std::vector<ColoredVertex> vertices;
+    ColoredVertex vertex;
+    vertex.color = glm::vec4(1,1,1,1);
+    vertex.normal = glm::vec3(1,1,1);
+
+    vertex.pos = glm::vec3(-100,-100,0);
+    vertices.push_back(vertex);
+
+    vertex.pos = glm::vec3(100,100,0);
+    vertices.push_back(vertex);
+
+    vertex.pos = glm::vec3(100,-100,0);
+    vertices.push_back(vertex);
+
+    vertex.pos = glm::vec3(-100,-100,0);
+    vertices.push_back(vertex);
+    
+    vertex.pos = glm::vec3(-100,100,0);
+    vertices.push_back(vertex);
+    
+    vertex.pos = glm::vec3(100,100,0);
+    vertices.push_back(vertex);
+
     GLuint vao, vbo = 0;
 
     glGenVertexArrays(1, &vao);
@@ -92,9 +106,9 @@ int main(int argc, char* args[])
     glGenBuffers(1, &vbo);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(ColoredVertex) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
 
-    shader->vertexAttribPointer("position", 3, GL_FLOAT, GL_FALSE, 0, 0);
+    ColoredVertex::setVertexAttribs(shader);
     int t_loc = shader->getUniformLocation("t");
     
     float t = 0;
