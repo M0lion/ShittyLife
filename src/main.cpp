@@ -5,6 +5,7 @@
 #include "Globals.h"
 #include "ShaderProgram.h"
 #include "ColoredVertex.h"
+#include "ColoredMesh.h"
 
 #include "Sleep.h"
 
@@ -75,52 +76,37 @@ int main(int argc, char* args[])
     shader->addShader(GL_FRAGMENT_SHADER, fragmentShader);
     shader->link();
     
-    std::vector<ColoredVertex> vertices;
+    ColoredMesh mesh;
+
     ColoredVertex vertex;
     vertex.color = glm::vec4(1,1,1,1);
     vertex.normal = glm::vec3(1,1,1);
 
-    vertex.pos = glm::vec3(-100,-100,0);
-    vertices.push_back(vertex);
+    vertex.pos = glm::vec3(-0.5,-0.5,10);
+    mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
 
-    vertex.pos = glm::vec3(100,100,0);
-    vertices.push_back(vertex);
+    vertex.pos = glm::vec3(0.5,0.5,0);
+    mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
 
-    vertex.pos = glm::vec3(100,-100,0);
-    vertices.push_back(vertex);
+    vertex.pos = glm::vec3(0.5,-0.5,0);
+    mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
 
-    vertex.pos = glm::vec3(-100,-100,0);
-    vertices.push_back(vertex);
+    vertex.pos = glm::vec3(-0.5,-0.5,0);
+    mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
     
-    vertex.pos = glm::vec3(-100,100,0);
-    vertices.push_back(vertex);
+    vertex.pos = glm::vec3(-0.5,0.5,0);
+    mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
     
-    vertex.pos = glm::vec3(100,100,0);
-    vertices.push_back(vertex);
+    vertex.pos = glm::vec3(0.5,0.5,0);
+    mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
 
-    GLuint vao, vbo = 0;
-
-    glGenVertexArrays(1, &vao);
-    glBindVertexArray(vao);
-
-    glGenBuffers(1, &vbo);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    
-    glBufferData(GL_ARRAY_BUFFER, sizeof(ColoredVertex) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
-
-    ColoredVertex::setVertexAttribs(shader);
-    int t_loc = shader->getUniformLocation("t");
-    
-    float t = 0;
+    mesh.load();
 
     while(!glfwWindowShouldClose(window))
     {
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glUniform1f(t_loc, t);
-        glDrawArrays(GL_TRIANGLES, 0, 6);
-
-        t += 0.05f;
+        mesh.Draw();
 
         sleep((int)(1000/60.0f));
 
