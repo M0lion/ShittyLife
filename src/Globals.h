@@ -9,11 +9,13 @@
 
 #include <string>
 
+#include "glm/ext.hpp"
+
 namespace Globals
 {
 	static std::ostream* logging = &std::cout;
-	static glm::mat4 camera;
-	static glm::mat4 projectionMatrix;
+	extern glm::mat4 camera;
+	extern glm::mat4 projectionMatrix;
 
 	static int windowWidth = 800;
 	static int windowHeight = 600;
@@ -25,14 +27,17 @@ namespace Globals
 		projectionMatrix = glm::perspective(.78f, windowWidth/(float)windowHeight, 0.1f, 1000.0f);
 	}
 
-	static void initGlobals()
+	inline static void initGlobals()
 	{
 		updateProjection();
 		camera = glm::perspective(.78f, 800.0f/400.0f, 0.1f, 1000.0f);
-		camera *= glm::rotate(45.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+		camera *= glm::rotate(3.14f, glm::vec3(0.0f, 1.0f, 0.0f));
+		camera *= glm::translate(glm::vec3(0.0f,0.0f,5.0f));
+
+		*logging << glm::to_string(camera) << "\n";
 	}
 
-	static void checkGLError(char* msg)
+	inline static void checkGLError(char* msg)
 	{
 		GLenum error = glGetError();
 		if (error)
