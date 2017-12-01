@@ -11,6 +11,13 @@
 
 #include <stdio.h>
 
+//called when window is resized
+void windowSizeCallback(GLFWwindow* window, int width, int height)
+{
+    Globals::windowWidth = width;
+    Globals::windowHeight = height;
+}
+
 int main(int argc, char* args[])
 {
     GLFWwindow* window;
@@ -18,7 +25,7 @@ int main(int argc, char* args[])
     if(!glfwInit())
         return -1;
 
-    window = glfwCreateWindow(640,480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(Globals::windowWidth,Globals::windowHeight, "Hello World", NULL, NULL);
 
     if(!window)
     {
@@ -104,7 +111,7 @@ int main(int argc, char* args[])
 
     while(!glfwWindowShouldClose(window))
     {
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT);  
 
         mesh.Draw();
 
