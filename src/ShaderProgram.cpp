@@ -77,12 +77,12 @@ void ShaderProgram::bindFragDataLocation(GLuint colorNumber, const char* name)
 
 void ShaderProgram::vertexAttribPointer(const char* name, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* pointer)
 {
-	use();
 	GLint attribPos = glGetAttribLocation(shaderProgram, name);
 
 	if (attribPos == -1)
 	{
 		*Globals::logging << "could not find shader attribute \"" << name << "\"\n";
+		//throw "could not find shader attribute";
 		return;
 	}
 

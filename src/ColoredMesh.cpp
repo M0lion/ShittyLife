@@ -65,7 +65,7 @@ void ColoredMesh::load()
 void ColoredMesh::Draw()
 {
     shader->use();
-    glUniformMatrix4fv(shader->getUniformLocation("camera"), 1, GL_FALSE, glm::value_ptr(Globals::camera));
+    glUniformMatrix4fv(shader->getUniformLocation("camera"), 1, GL_FALSE, &Globals::camera[0][0]);
     glBindVertexArray(this->vao);
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }

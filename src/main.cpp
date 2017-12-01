@@ -82,22 +82,16 @@ int main(int argc, char* args[])
     vertex.color = glm::vec4(1,1,1,1);
     vertex.normal = glm::vec3(1,1,1);
 
-    vertex.pos = glm::vec3(-0.5,-0.5,10);
+    vertex.pos = glm::vec3(1,0,0);
+    vertex.color = glm::vec4(1,0,0,1);
     mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
 
-    vertex.pos = glm::vec3(0.5,0.5,0);
+    vertex.pos = glm::vec3(0,0,1);
+    vertex.color = glm::vec4(0,0,1,1);
     mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
 
-    vertex.pos = glm::vec3(0.5,-0.5,0);
-    mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
-
-    vertex.pos = glm::vec3(-0.5,-0.5,0);
-    mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
-    
-    vertex.pos = glm::vec3(-0.5,0.5,0);
-    mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
-    
-    vertex.pos = glm::vec3(0.5,0.5,0);
+    vertex.pos = glm::vec3(0,1,0);
+    vertex.color = glm::vec4(0,1,0,1);
     mesh.addVertex(vertex.pos, vertex.normal, vertex.color);
 
     mesh.load();
