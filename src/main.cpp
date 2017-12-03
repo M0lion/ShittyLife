@@ -6,6 +6,7 @@
 #include "ShaderProgram.h"
 #include "ColoredVertex.h"
 #include "ColoredMesh.h"
+#include "Camera.h"
 
 #include "Sleep.h"
 
@@ -16,6 +17,14 @@ void windowSizeCallback(GLFWwindow* window, int width, int height)
 {
     Globals::windowWidth = width;
     Globals::windowHeight = height;
+    Globals::updateProjection();
+    glViewport(0,0, width, height);
+}
+
+void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    *Globals::logging << key << "\n";
+    Globals::keys[key] = action != GLFW_RELEASE;
 }
 
 int main(int argc, char* args[])
@@ -33,12 +42,16 @@ int main(int argc, char* args[])
         return -1;
     }
 
+    glfwSetWindowSizeCallback(window, windowSizeCallback);
+    glfwSetKeyCallback(window, keyCallback);
+
     glfwMakeContextCurrent(window);
 
     glewExperimental = GL_TRUE;
 	glewInit();
 
     Globals::initGlobals();
+    glViewport(0,0, Globals::windowWidth, Globals::windowWidth);
 
     //setup test shader
 	ShaderProgram* shader = new ShaderProgram();
@@ -103,11 +116,35 @@ int main(int argc, char* args[])
 
     mesh.load();
 
+    Camera camera;
+
     while(!glfwWindowShouldClose(window))
     {
         glClear(GL_COLOR_BUFFER_BIT);  
 
-        mesh.Draw();
+        mesh.Draw(&camera, glm::translate(glm::vec3(0,0,-1)));
+
+        glm::vec3 move;
+
+        if(Globals::keys[GLFW_KEY_W])
+        {
+            move.z -= 1;
+        }
+        if(Globals::keys[GLFW_KEY_S])
+        {
+            move.z += 1;
+        }
+        if(Globals::keys[GLFW_KEY_A])
+        {
+            move.x -= 1;
+        }
+        if(Globals::keys[GLFW_KEY_D])
+        {
+            move.x += 1;
+        }
+
+        move *= 1/60.0f;
+        camera.Move(move);
 
         sleep((int)(1000/60.0f));
 

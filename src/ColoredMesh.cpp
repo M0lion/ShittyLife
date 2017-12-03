@@ -62,10 +62,12 @@ void ColoredMesh::load()
     glBufferData(GL_ARRAY_BUFFER, sizeof(ColoredVertex) * this->vertices.size(), this->vertices.data(), GL_STATIC_DRAW);
 }
 
-void ColoredMesh::Draw()
+void ColoredMesh::Draw(Camera* view, glm::mat4 model)
 {
     shader->use();
-    glUniformMatrix4fv(shader->getUniformLocation("camera"), 1, GL_FALSE, &Globals::camera[0][0]);
+    glUniformMatrix4fv(shader->getUniformLocation("model"), 1, GL_FALSE, glm::value_ptr(model));
+    glUniformMatrix4fv(shader->getUniformLocation("view"), 1, GL_FALSE, view->getDataPtr());
+    glUniformMatrix4fv(shader->getUniformLocation("projection"), 1, GL_FALSE, glm::value_ptr(Globals::projectionMatrix));
     glBindVertexArray(this->vao);
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }

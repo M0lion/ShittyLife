@@ -4,6 +4,7 @@
 #include <glm/vec4.hpp>
 #include "ShaderProgram.h"
 #include "ColoredVertex.h"
+#include "Camera.h"
 
 class ColoredMesh
 {
@@ -16,7 +17,7 @@ public:
 
     void load();
 
-    void Draw();
+    void Draw(Camera* camera, glm::mat4 model);
 private:
     GLuint vbo;
     GLuint vao;

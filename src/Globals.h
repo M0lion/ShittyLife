@@ -22,6 +22,8 @@ namespace Globals
 
 	const static std::string shaderFolder = "../shaders/";
 
+	extern bool keys[GLFW_KEY_LAST];
+
 	static void updateProjection()
 	{
 		projectionMatrix = glm::perspective(.78f, windowWidth/(float)windowHeight, 0.1f, 1000.0f);
@@ -35,6 +37,8 @@ namespace Globals
 		camera *= glm::translate(glm::vec3(0.0f,0.0f,5.0f));
 
 		*logging << glm::to_string(camera) << "\n";
+		
+		updateProjection();
 	}
 
 	inline static void checkGLError(char* msg)

@@ -1,6 +1,8 @@
 #version 130
 
-uniform mat4 camera;
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
 
 in vec3 position;
 out vec4 pos;
@@ -10,7 +12,8 @@ out vec4 fColor;
 
 void main()
 {
-    pos = camera * vec4(position, 1.0);
+    mat4 mvp = projection * view * model;
+    pos = mvp * vec4(position, 1.0);
     gl_Position = vec4(pos);
     fColor = color;
 }
