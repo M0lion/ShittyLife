@@ -14,6 +14,12 @@ public:
     float* getDataPtr();
 
 private:
-    bool isUoToDate = false;
+    glm::mat4 getRotation();
+    void update();
+
+    bool isUpToDate = false;
+    glm::vec4 pos;
+    float yaw;
+    float pitch;
     glm::mat4 matrix;
 };

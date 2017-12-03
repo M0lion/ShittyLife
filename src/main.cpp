@@ -18,7 +18,8 @@ void windowSizeCallback(GLFWwindow* window, int width, int height)
     Globals::windowWidth = width;
     Globals::windowHeight = height;
     Globals::updateProjection();
-    glViewport(0,0, width, height);
+
+    *Globals::logging << width << " : " << height << "\n";
 }
 
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -51,7 +52,6 @@ int main(int argc, char* args[])
 	glewInit();
 
     Globals::initGlobals();
-    glViewport(0,0, Globals::windowWidth, Globals::windowWidth);
 
     //setup test shader
 	ShaderProgram* shader = new ShaderProgram();
@@ -122,7 +122,7 @@ int main(int argc, char* args[])
     {
         glClear(GL_COLOR_BUFFER_BIT);  
 
-        mesh.Draw(&camera, glm::translate(glm::vec3(0,0,-1)));
+        mesh.Draw(&camera, glm::translate(glm::vec3(0,0,-5)));
 
         glm::vec3 move;
 
