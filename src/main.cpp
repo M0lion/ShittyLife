@@ -18,13 +18,10 @@ void windowSizeCallback(GLFWwindow* window, int width, int height)
     Globals::windowWidth = width;
     Globals::windowHeight = height;
     Globals::updateProjection();
-
-    *Globals::logging << width << " : " << height << "\n";
 }
 
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-    *Globals::logging << key << "\n";
     Globals::keys[key] = action != GLFW_RELEASE;
 }
 
